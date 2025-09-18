@@ -65,8 +65,8 @@ clearBtn.addEventListener("click", function () {
     callHistory.innerHTML = "";
 })
 
-const copyBtns = document.querySelectorAll('.copy-btn')
 // copy count and copy to clipborad
+const copyBtns = document.querySelectorAll('.copy-btn')
 
 for (let copyBtn of copyBtns) {
     copyBtn.addEventListener("click", function () {
@@ -75,36 +75,11 @@ for (let copyBtn of copyBtns) {
         document.getElementById('copy-count').innerText = currentCopyCount;
 
 
-        //copy to clipboard
-        // function copyTextToClipboard() {
-        //     const callNums = document.getElementsByClassName('call')
-        //     for (const callNum of callNums) {
-        //         const copyCallNum = callNum.textContent;
-        //         navigator.clipboard.writeText(copyCallNum)
-        //         return
-        //     }
-
-        // }
-
-        // const callNums = document.getElementsByClassName('call')
-        // for(let callNum of callNums){
-        //     const callNumber = callNum.innerText
-
-
-        // }
-
-        // const btnCalls = document.getElementsByClassName('call')
-        // for (let callButton of btnCalls) {
-        //     if
-        //     let copyNum = callButton.innerText
-        //     navigator.clipboard.writeText(copyNum)
-
-        // }
-        // alert('copied'+" "+copyNum)
 
 
     })
 }
+        //copy to clipboard
 copyBtns.forEach(button => {
     button.addEventListener('click',() =>{
         const Number = button.parentNode.parentNode.children[3].textContent
