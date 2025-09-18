@@ -54,7 +54,7 @@ for (let callButton of callBtn) {
 
         callHistory.append(newHistory);
 
-        alert('calling'+" "+cardTitle+" "+cardCall);
+        alert('calling' + " " + cardTitle + " " + cardCall);
 
     })
 }
@@ -63,4 +63,57 @@ let clearBtn = document.getElementById('clear-btn')
 clearBtn.addEventListener("click", function () {
     const callHistory = document.getElementById('call-history');
     callHistory.innerHTML = "";
+})
+
+const copyBtns = document.querySelectorAll('.copy-btn')
+// copy count and copy to clipborad
+
+for (let copyBtn of copyBtns) {
+    copyBtn.addEventListener("click", function () {
+        const copyCount = document.getElementById('copy-count').innerText;
+        const currentCopyCount = Number(copyCount) + 1
+        document.getElementById('copy-count').innerText = currentCopyCount;
+
+
+        //copy to clipboard
+        // function copyTextToClipboard() {
+        //     const callNums = document.getElementsByClassName('call')
+        //     for (const callNum of callNums) {
+        //         const copyCallNum = callNum.textContent;
+        //         navigator.clipboard.writeText(copyCallNum)
+        //         return
+        //     }
+
+        // }
+
+        // const callNums = document.getElementsByClassName('call')
+        // for(let callNum of callNums){
+        //     const callNumber = callNum.innerText
+
+
+        // }
+
+        // const btnCalls = document.getElementsByClassName('call')
+        // for (let callButton of btnCalls) {
+        //     if
+        //     let copyNum = callButton.innerText
+        //     navigator.clipboard.writeText(copyNum)
+
+        // }
+        // alert('copied'+" "+copyNum)
+
+
+    })
+}
+copyBtns.forEach(button => {
+    button.addEventListener('click',() =>{
+        const Number = button.parentNode.parentNode.children[3].textContent
+        navigator.clipboard.writeText(Number)
+          .then(() => {
+            alert('Copied: ' + Number);
+          })
+          .catch(err => {
+            console.error('Failed to copy: ', err);
+          });
+    })
 })
