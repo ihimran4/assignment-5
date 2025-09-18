@@ -19,10 +19,9 @@ for (let callButton of callBtn) {
     callButton.addEventListener("click", function () {
         // coin count
         const coin = getElements('coin').innerText;
-
         const currentCoin = Number(coin) - 20;
         if (currentCoin < 20) {
-            alert('coin used')
+            alert('Not enough coin. At least 20 coins needed to call')
             return;
         }
         getElements('coin').innerText = currentCoin;
@@ -59,3 +58,9 @@ for (let callButton of callBtn) {
 
     })
 }
+// clear call history
+let clearBtn = document.getElementById('clear-btn')
+clearBtn.addEventListener("click", function () {
+    const callHistory = document.getElementById('call-history');
+    callHistory.innerHTML = "";
+})
